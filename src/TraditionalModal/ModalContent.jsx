@@ -2,7 +2,7 @@
 
 const ModalContent = ({onClose}) => {
     return (
-        <div>
+        <div >
            <h4 className="text-2xl font-bold ">Hey, I am a Modal !!</h4> 
            <button 
            onClick={ onClose}

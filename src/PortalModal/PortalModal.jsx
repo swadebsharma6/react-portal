@@ -1,11 +1,15 @@
 import { useState } from "react";
-import { createPortal } from "react-dom";
 import Modal from "./Modal";
+import Portal from "./Portal";
 
 
 const PortalModal = () => {
 
     const [showModal, setShowModal] = useState(false);
+
+    // const handleClick =()=>{
+    //     console.log('I am Clicked')
+    // }
 
     return (
         <section className="mx-w-7xl mx-auto">
@@ -20,8 +24,11 @@ const PortalModal = () => {
             </button>
 
             {
-                showModal &&  createPortal(
-                    <Modal onClose={()=> setShowModal(false)}/>, document.body
+                showModal &&  (
+                    <Portal>
+                    <Modal onClose={()=> setShowModal(false)}/>
+                    </Portal>
+                    
                 )
             }
 
